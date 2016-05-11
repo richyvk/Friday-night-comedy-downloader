@@ -29,8 +29,10 @@ def check_rss(url):
     mp3_title = title.replace('fricomedy:  ', '').replace(' ', '_') + '.mp3'
 
     #download mp3 if title tag string contains 'the news quiz'
-    if (title.find('the news quiz')):
+    if "the news quiz" in title:
         dl(link, mp3_title)
+    else:
+        print "No download, this week's show was %s" % title
 
 
 today = datetime.date.today()
